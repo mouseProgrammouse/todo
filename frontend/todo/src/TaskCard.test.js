@@ -9,13 +9,14 @@ describe("TaskCard", function() {
     let component, element;
 
     element = React.createElement(
-      'TaskCard'
+      TaskCard
       //{} //props
       //add children as the last argument
     );
 
     // Render into a document fragment and return the full component instance.
     expect(function() {
+      //
       component = ReactTestUtils.renderIntoDocument(element);
     }).not.toThrow();
   });
