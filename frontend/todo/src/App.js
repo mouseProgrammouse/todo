@@ -28,7 +28,7 @@ class App extends Component {
   updateTaskById = (id, newTitle, newDescription) => {
     let newTasksList = this.state.tasksList;
     //find and update task
-
+    //TODO:
     //set new state
     this.setState ({
       tasksList: newTasksList
@@ -37,6 +37,7 @@ class App extends Component {
 
   //delete task by id
   deleteTaskById = (id) => {
+    //TODO:
     this.setState ({
       tasksList: this.state.tasksList.filter(task => task.id!==id)
     });
@@ -45,7 +46,7 @@ class App extends Component {
   addNewTask = (title, description) => {
     let newTasksList = this.state.tasksList;
     //add task if title and description != ''
-
+    //TODO:
     //set new state
     this.setState ({
       tasksList: newTasksList
@@ -55,7 +56,7 @@ class App extends Component {
   sortTasksByDate = () => {
     let newTasksList = this.state.tasksList;
     //sort array
-
+    //TODO:
     //set new state
     this.setState ({
       tasksList: newTasksList
