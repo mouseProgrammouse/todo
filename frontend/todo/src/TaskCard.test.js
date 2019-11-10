@@ -1,23 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactTestUtils from 'react-dom/test-utils';
+import ReactTestUtils,  { act } from 'react-dom/test-utils';
 import TaskCard from './TaskCard';
 
 describe("TaskCard", function() {
 
-  it ("can render without error", function() {
-    let component, element;
+  let container;
+  const data = {
+    project: 'TODO list',
+    description: 'Add documentation for each http-method. And please dont forget about status code'
+  };
 
-    element = React.createElement(
-      TaskCard
-      //{} //props
-      //add children as the last argument
-    );
+  beforeEach(() => {
+    container = document.createElement('div');
+    document.body.appendChild(container);
+  });
 
-    // Render into a document fragment and return the full component instance.
-    expect(function() {
-      //
-      component = ReactTestUtils.renderIntoDocument(element);
-    }).not.toThrow();
+  afterEach(() => {
+    document.body.removeChild(container);
+    container = null;
+  });
+
+  it ("TaskCard renders without crashing",() => {
+    //prepare a component for assertions. This makes your test run closer to how React works in the browser.
+    act(() => {
+      ReactDOM.render(<TaskCard project={data.project} description={data.description}/>, container);
+    });
   });
 });
