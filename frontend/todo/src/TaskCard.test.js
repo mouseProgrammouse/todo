@@ -28,7 +28,7 @@ describe("TaskCard", function() {
     });
   });
 
-  it ("TaskCard renders correct data", () => {
+  it ("TaskCard renders correct title and description", () => {
     act(() => {
       ReactDOM.render(<TaskCard title={data.title} description={data.description}/>, container);
     });
@@ -40,5 +40,31 @@ describe("TaskCard", function() {
     //check description
     const description = container.querySelector('p');
     expect(description.textContent).toBe(data.description);
+  });
+
+  it ("TaskCard renders correct buttons", () => {
+    act(() => {
+      ReactDOM.render(<TaskCard title={data.title} description={data.description}/>, container);
+    });
+
+    //check close button
+    //check edit button
+    //check delete button
+  });
+
+  it ("Add a new TaskCard", () => {
+
+  });
+
+  it ("Edit a TaskCard", () => {
+
+  });
+
+  it ("Delete a TaskCard", () => {
+
+  });
+
+  it ("Check state change of task", () => {
+
   });
 });
