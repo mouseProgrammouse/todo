@@ -1,10 +1,7 @@
-import React, {Component} from 'react';
-import TaskCard from './TaskCard';
+import React, {Component} from 'react'
+import TaskCard from './TaskCard'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import './App.css';
-
-library.add(fas);
+import './App.css'
 
 class App extends Component {
 
