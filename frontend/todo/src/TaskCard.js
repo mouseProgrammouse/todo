@@ -6,9 +6,9 @@ import PropTypes from 'prop-types'
 
 class TaskCard extends Component {
 
-  constructor (props) {
-    super(props);
-  }
+  // constructor (props) {
+  //   super(props);
+  // }
 
 render() {
   const { title, description } = this.props;

@@ -73,14 +73,27 @@ describe("TaskCard", function() {
       ReactDOM.render(<TaskCard title={data.title} description={data.description}/>, container);
     });
 
-    //check close button
+    //check icon for close button
     const closeButton = container.querySelector('.close');
-    const svgIcon = closeButton.querySelector('svg');
+    let svgIcon = closeButton.querySelector('svg');
     expect(svgIcon).not.toBe(null);
+    expect(svgIcon.getAttribute('data-icon')).toBe('times');
+
+    //check icon for edit button
+    const editButton = container.querySelector('.edit');
+    svgIcon = editButton.querySelector('svg');
+    expect(svgIcon).not.toBe(null);
+    expect(svgIcon.getAttribute('data-icon')).toBe('edit');
+
+    //check icon for delete button
+    const deleteButton = container.querySelector('.delete');
+    svgIcon = deleteButton.querySelector('svg');
+    expect(svgIcon).not.toBe(null);
+    expect(svgIcon.getAttribute('data-icon')).toBe('trash');
   });
 
   it ("Add a new TaskCard", () => {
-
+    
   });
 
   it ("Edit a TaskCard", () => {
