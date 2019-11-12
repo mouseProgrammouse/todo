@@ -79,6 +79,7 @@ class App extends Component {
     return (
       <div className="App">
         <TaskCard title={'sa[asds]'} description={'asdsad'}/>
+        <TasksList />
       </div>
     );
   }

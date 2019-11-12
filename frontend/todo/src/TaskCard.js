@@ -14,7 +14,6 @@ render() {
   const { title, description } = this.props;
   return (
     <div className="card">
-      <button className="close"><FontAwesomeIcon icon={faTimes}/></button>
       <h3>{title}</h3>
       <p>{description}</p>
       <div className="actions">

@@ -47,11 +47,6 @@ describe("TaskCard", function() {
       ReactDOM.render(<TaskCard title={data.title} description={data.description}/>, container);
     });
 
-    //check close button
-    const closeButton = container.querySelector('.close');
-    expect(closeButton).not.toBe(null);
-    expect(closeButton.tagName).toBe('BUTTON');
-
     //check edit button
     const editButton = container.querySelector('.edit');
     expect(editButton).not.toBe(null);
@@ -73,15 +68,9 @@ describe("TaskCard", function() {
       ReactDOM.render(<TaskCard title={data.title} description={data.description}/>, container);
     });
 
-    //check icon for close button
-    const closeButton = container.querySelector('.close');
-    let svgIcon = closeButton.querySelector('svg');
-    expect(svgIcon).not.toBe(null);
-    expect(svgIcon.getAttribute('data-icon')).toBe('times');
-
     //check icon for edit button
     const editButton = container.querySelector('.edit');
-    svgIcon = editButton.querySelector('svg');
+    let svgIcon = editButton.querySelector('svg');
     expect(svgIcon).not.toBe(null);
     expect(svgIcon.getAttribute('data-icon')).toBe('edit');
 
