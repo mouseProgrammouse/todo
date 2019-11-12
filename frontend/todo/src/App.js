@@ -2,26 +2,34 @@ import React, {Component} from 'react'
 import TaskCard from './TaskCard'
 import './App.css'
 
-class App extends Component {
+//information about backend server
+const backendServer = {
+    host:'http://localhost',
+    port:'8000'
+  }
 
+class App extends Component {
   state = {
-    tasksList: []
-  };
+      tasksList: []
+  }
 
   componentDidMount = () => {
     //get and set data for tasks' list
-    this.setState({ tasksList: [{
-          TimeSt: "2019-09-28T17:12:51.346962-07:00",
-          description: "Add documentation for each http-method.",
-          id: "dd8797c8-8af4-4683-ab93-38db1cf408d9",
-          project: "ToDo API"
-      },
-      {
-          TimeSt: "2019-09-28T17:12:51.346962-07:00",
-          description: "Add documentation for each http-method.",
-          id: "dd8797c8-8af4-4683-ab93-38db1cf408d9",
-          project: "ToDo API"
-      }]});
+    this.getTaskList();
+  }
+
+  setTaskList = (newTaskList) => {
+    this.setState({tasksList: newTaskList})
+  }
+
+  getTaskList = () => {
+    fetch(backendServer.host+':'+backendServer.port+'/api/v1/tasks',{method:'GET'})
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      this.setTaskList(data)
+    })
+    .catch(error => console.error('Get tasks: '+error));
   }
 
   //update task by id
@@ -37,20 +45,23 @@ class App extends Component {
 
   //delete task by id
   deleteTaskById = (id) => {
-    //TODO:
-    this.setState ({
-      tasksList: this.state.tasksList.filter(task => task.id!==id)
-    });
+    fetch(backendServer.host+':'+backendServer.port+'/api/v1/tasks'+id, {method:'DELETE'})
+    .then(res=>{
+      if(res.ok) this.getTaskList();
+    })
+    .catch(e=>console.error('Delete task: '+e));
   }
 
   addNewTask = (title, description) => {
-    let newTasksList = this.state.tasksList;
     //add task if title and description != ''
-    //TODO:
-    //set new state
-    this.setState ({
-      tasksList: newTasksList
-    });
+    if (title!=='' && title!==undefined && description!=='' && description!==undefined) {
+      fetch(backendServer.host+':'+backendServer.port+'/api/v1/tasks?description="'+description+'"&project="'+title+'"', {method:'POST'})
+      .then(res=>{ if (res.ok) {
+        //update data
+        this.getTaskList();
+      }})
+      .catch(e=>console.error('Add task: '+e));
+    }
   }
 
   sortTasksByDate = () => {

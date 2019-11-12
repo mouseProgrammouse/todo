@@ -90,10 +90,16 @@ describe("TaskCard", function() {
     svgIcon = deleteButton.querySelector('svg');
     expect(svgIcon).not.toBe(null);
     expect(svgIcon.getAttribute('data-icon')).toBe('trash');
+
+    //check icon for done button
+    const doneButton = container.querySelector('.done');
+    svgIcon = doneButton.querySelector('svg');
+    expect(svgIcon).not.toBe(null);
+    expect(svgIcon.getAttribute('data-icon')).toBe('check');
   });
 
   it ("Add a new TaskCard", () => {
-    
+
   });
 
   it ("Edit a TaskCard", () => {
