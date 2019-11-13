@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faEdit, faTrash, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faTrash, faCheck } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types'
 
 

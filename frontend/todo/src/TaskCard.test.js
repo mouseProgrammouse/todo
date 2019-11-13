@@ -86,20 +86,4 @@ describe("TaskCard", function() {
     expect(svgIcon).not.toBe(null);
     expect(svgIcon.getAttribute('data-icon')).toBe('check');
   });
-
-  it ("Add a new TaskCard", () => {
-
-  });
-
-  it ("Edit a TaskCard", () => {
-
-  });
-
-  it ("Delete a TaskCard", () => {
-
-  });
-
-  it ("Check state change of task", () => {
-
-  });
 });

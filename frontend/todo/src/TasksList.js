@@ -1,12 +1,20 @@
-import React, {Component} from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-class TasksList extends Component {
+const TasksList = (props) => {
 
-  render() {
-    return (<div>
-      Task List
-    </div>);
-  }
+  const { updateTask, addTask, deleteTask, tasksList } = props;
+
+  return (<div>
+    Task List
+  </div>);
+}
+
+TasksList.propTypes = {
+  updateTask: PropTypes.object.isRequired,
+  addTask: PropTypes.object.isRequired,
+  deleteTask: PropTypes.object.isRequired,
+  tasksList: PropTypes.array.isRequired
 }
 
 export default TasksList

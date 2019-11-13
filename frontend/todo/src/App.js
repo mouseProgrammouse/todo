@@ -27,7 +27,6 @@ class App extends Component {
     fetch(backendServer.host+':'+backendServer.port+'/api/v1/tasks',{method:'GET'})
     .then(res => res.json())
     .then(data => {
-      console.log(data)
       this.setTaskList(data)
     })
     .catch(error => console.error('Get tasks: '+error));
@@ -79,7 +78,7 @@ class App extends Component {
     return (
       <div className="App">
         <TaskCard title={'sa[asds]'} description={'asdsad'}/>
-        <TasksList />
+        <TasksList updateTask={this.updateTaskById} addTask={this.addTask} deleteTask={this.deleteTaskById} tasksList={this.state.tasksList}/>
       </div>
     );
   }
