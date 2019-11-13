@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import TaskCard from './TaskCard'
 import TasksList from './TasksList'
 import './App.css'
 
@@ -34,13 +33,13 @@ class App extends Component {
 
   //update task by id
   updateTaskById = (id, newTitle, newDescription) => {
-    let newTasksList = this.state.tasksList;
     //find and update task
-    //TODO:
-    //set new state
-    this.setState ({
-      tasksList: newTasksList
-    });
+    fetch(backendServer.host+':'+backendServer.port+'/api/v1/tasks?'+id+'&description="'+newDescription+'"&project="'+newTitle+'"', {method:'PUT'})
+    .then(res=>{
+      //set new state
+      if(res.ok) this.getTaskList();
+    })
+    .catch(e=>console.error('Update task: '+e));
   }
 
   //delete task by id
@@ -77,8 +76,11 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <TaskCard title={'sa[asds]'} description={'asdsad'}/>
-        <TasksList updateTask={this.updateTaskById} addTask={this.addTask} deleteTask={this.deleteTaskById} tasksList={this.state.tasksList}/>
+        <TasksList
+        updateTask={this.updateTaskById}
+        addTask={this.addNewTask}
+        deleteTask={this.deleteTaskById}
+        tasksList={this.state.tasksList}/>
       </div>
     );
   }
