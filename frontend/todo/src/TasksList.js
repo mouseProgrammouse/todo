@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import TaskCard from './TaskCard'
+import './TasksList.css'
 
 const TasksList = (props) => {
 
   const { updateTask, addTask, deleteTask, tasksList } = props;
 
-  return (<div>
+  return (<div className="list">
     {tasksList.map((task, index) => (
       <TaskCard updateTask={updateTask} deleteTask={deleteTask} key={index} title={task.project} description={task.description} id={task.id}/>
     ))}

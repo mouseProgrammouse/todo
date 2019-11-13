@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faTrash, faCheck } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types'
+import './TaskCard.css'
 
 
 class TaskCard extends Component {
@@ -44,9 +45,11 @@ class TaskCard extends Component {
         <div>
           <h3>{title}</h3>
           <p>{description}</p>
-          <div className="actions">
-            <button className="edit" onClick={e => this.updateModeOn(e)}><FontAwesomeIcon icon={faEdit}/></button>
-            <button className="delete" onClick={()=>deleteTask(id)}><FontAwesomeIcon icon={faTrash}/></button>
+          <div className="buttons">
+            <div className="actions">
+              <button className="edit" onClick={e => this.updateModeOn(e)}><FontAwesomeIcon icon={faEdit}/></button>
+              <button className="delete" onClick={()=>deleteTask(id)}><FontAwesomeIcon icon={faTrash}/></button>
+            </div>
             <button className="done"><FontAwesomeIcon icon={faCheck}/></button>
           </div>
         </div>
@@ -58,7 +61,7 @@ class TaskCard extends Component {
 TaskCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   deleteTask: PropTypes.func.isRequired,
   updateTask: PropTypes.func.isRequired
 }

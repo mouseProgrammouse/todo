@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import TasksList from './TasksList'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowCircleUp, faArrowCircleDown } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
 
 //information about backend server
@@ -76,11 +78,20 @@ class App extends Component {
   render () {
     return (
       <div className="App">
+        <section className="tasks">
+        <div className="top">
+          <h2>Your current tasks</h2>
+          <div className="sort">
+            <button><FontAwesomeIcon icon={faArrowCircleDown}/></button>
+            <button><FontAwesomeIcon icon={faArrowCircleUp}/></button>
+          </div>
+        </div>
         <TasksList
         updateTask={this.updateTaskById}
         addTask={this.addNewTask}
         deleteTask={this.deleteTaskById}
         tasksList={this.state.tasksList}/>
+        </section>
       </div>
     );
   }
