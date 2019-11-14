@@ -109,3 +109,10 @@ button:visited
   padding: 2px 5px;
   background-color: transparent;
 }
+
+.end {
+  margin-bottom: 137px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
