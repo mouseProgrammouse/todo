@@ -3,6 +3,7 @@ import TasksList from './TasksList'
 import MainScreen from './MainScreen'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowCircleUp, faArrowCircleDown } from '@fortawesome/free-solid-svg-icons'
+import todoListMain from './img/todo_list.svg'
 import './App.css'
 
 //information about backend server
@@ -10,6 +11,17 @@ const backendServer = {
     host:'http://localhost',
     port:'8000'
   }
+
+const data = {
+  mainPage: {
+    header: 'Let’s get more productive!',
+    quote: {
+      text: 'A dream doesn\'t become reality through magic; it takes sweat, determination and hard work.',
+      autor: 'Colin Powell'
+    },
+    imgSrc: todoListMain
+  }
+}
 
 class App extends Component {
   state = {
@@ -79,7 +91,9 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <MainScreen />
+        <MainScreen imgSrc={data.mainPage.imgSrc}
+          header={data.mainPage.header}
+          quote={data.mainPage.quote}/>
         <section className="tasks">
         <div className="top">
           <h2>Your current tasks</h2>

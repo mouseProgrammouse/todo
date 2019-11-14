@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 const MainScreen = (props) => {
 
-  const { imgSrc, header, quote, autor } = props;
+  const { imgSrc, header, quote} = props;
 
   return (
     <secrtion className="main">
@@ -14,16 +15,22 @@ const MainScreen = (props) => {
         </div>
       </nav>
       <div className="main-screen">
-        <img src="#" alt="todo list"/>
+        <img src={imgSrc} alt="todo list"/>
         <div className="description">
           <h1>{header}</h1>
-          <q>{quote}</q>
-          <span className="autor">{autor}</span>
+          <q>{quote.text}</q>
+          <span className="autor">{quote.autor}</span>
           <button>start</button>
         </div>
       </div>
     </secrtion>
   );
+}
+
+MainScreen.propTypes = {
+  imgSrc: PropTypes.string.isRequired,
+  header: PropTypes.string.isRequired,
+  quote: PropTypes.object.isRequired
 }
 
 export default MainScreen
