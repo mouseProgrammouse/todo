@@ -1,0 +1,47 @@
+.info {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 137px;
+}
+
+.info .header{
+  width: 83%;
+}
+
+.info .main {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info .main img {
+  width: 50%;
+}
+
+.info .main .how-to {
+  width: 40%;
+}
+
+.info .main .how-to ul {
+  margin-bottom: 37px;
+}
+
+.info a,
+.info a:active,
+.info a:hover,
+.info a:visited {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  background: #3E3C42;
+  color: #fff;
+  border-radius: 60px;
+  padding: 8px 88px;
+  margin: 14px 0;
+  text-decoration: none;
+  justify-content: center;
+}

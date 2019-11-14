@@ -7,6 +7,7 @@ import { faArrowCircleUp, faArrowCircleDown } from '@fortawesome/free-solid-svg-
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import todoListMain from './img/todo_list.svg'
+import infoMain from './img/wall_with_todo.svg'
 import './App.css'
 
 library.add(fab)
@@ -29,6 +30,20 @@ const data = {
       href: '#tasks',
       text: 'Let\'s try'
     }
+  },
+  info: {
+    header: 'How to install app',
+    srcImg: infoMain,
+    instruction: {
+      header: 'It\'s very easy to install our app',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut...',
+      steps: [
+      'Lorem ipsum dolor sit amet, consectetur',
+      'Lorem ipsum dolor sit amet, consectetur',
+      'Lorem ipsum dolor sit amet, consectetur'
+      ]
+    },
+    link: 'https://github.com/mouseProgrammouse/todo'
   }
 }
 
@@ -118,7 +133,10 @@ class App extends Component {
           deleteTask={this.deleteTaskById}
           tasksList={this.state.tasksList}/>
         </section>
-        <Info/>
+        <Info srcImg={data.info.srcImg}
+        header={data.info.header}
+        instruction={data.info.instruction}
+        link={data.info.link} />
       </div>
     );
   }

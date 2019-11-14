@@ -51,7 +51,7 @@ h3 {
   margin-block-end: 3px;
 }
 
-p {
+p, ul {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -75,6 +75,7 @@ p {
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 107px;
 }
 
 .top {
