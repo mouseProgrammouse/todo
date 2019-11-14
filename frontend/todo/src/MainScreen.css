@@ -1,0 +1,103 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-screen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 54px 0 108px 0;
+}
+
+.main a {
+    outline: none;
+    border: none;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 145%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #3E3C42;
+    padding: 2px 5px;
+    background-color: transparent;
+}
+
+.main q {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 145%;
+  margin-block-start: 10px;
+  margin-block-end: 12px;
+}
+
+.main-screen a,
+.main-screen a:active,
+.main-screen a:hover,
+.main-screen a:visited {
+  
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  background: #3E3C42;
+  color: #fff;
+  border-radius: 60px;
+  padding: 8px 88px;
+  margin: 14px 0;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.main .autor {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 145%;
+  display: block;
+}
+
+.main .autor:before {
+  margin-top: 2px;
+  content: "– ";
+}
+
+.main-screen img {
+  width: 60%;
+}
+
+.main-screen .description {
+  width: 40%;
+  margin-left: 50px;
+}
+
+nav div {
+  display: flex;
+  flex-flow: row;
+}
+
+.logo {
+  width: 36px;
+  height: 32px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 145%;
+  padding: 2px 0;
+  color: #3E3C42;
+}

@@ -3,9 +3,12 @@ import TasksList from './TasksList'
 import MainScreen from './MainScreen'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowCircleUp, faArrowCircleDown } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 import todoListMain from './img/todo_list.svg'
 import './App.css'
 
+library.add(fab)
 //information about backend server
 const backendServer = {
     host:'http://localhost',
@@ -19,7 +22,12 @@ const data = {
       text: 'A dream doesn\'t become reality through magic; it takes sweat, determination and hard work.',
       autor: 'Colin Powell'
     },
-    imgSrc: todoListMain
+    href: '#tasks',
+    imgSrc: todoListMain,
+    callToAction: {
+      href: '#tasks',
+      text: 'Let\'s try'
+    }
   }
 }
 
@@ -93,8 +101,9 @@ class App extends Component {
       <div className="App">
         <MainScreen imgSrc={data.mainPage.imgSrc}
           header={data.mainPage.header}
-          quote={data.mainPage.quote}/>
-        <section className="tasks">
+          quote={data.mainPage.quote}
+          callToAction={data.mainPage.callToAction}/>
+        <section id="tasks" className="tasks">
         <div className="top">
           <h2>Your current tasks</h2>
           <div className="sort">

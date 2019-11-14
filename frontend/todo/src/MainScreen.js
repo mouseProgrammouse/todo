@@ -1,17 +1,20 @@
-import React, {Component} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import './MainScreen.css'
 
 const MainScreen = (props) => {
 
-  const { imgSrc, header, quote} = props;
+  const { imgSrc, header, quote, callToAction} = props;
 
   return (
     <secrtion className="main">
       <nav>
         <span className="logo">ToDo</span>
         <div>
-          <a href="#">git</a>
-          <a href to="#">info</a>
+          <a href="https://github.com/mouseProgrammouse/todo"><FontAwesomeIcon icon={["fab", "git"]}/></a>
+          <a href to="#info"><FontAwesomeIcon icon={faInfoCircle}/></a>
         </div>
       </nav>
       <div className="main-screen">
@@ -20,7 +23,7 @@ const MainScreen = (props) => {
           <h1>{header}</h1>
           <q>{quote.text}</q>
           <span className="autor">{quote.autor}</span>
-          <button>start</button>
+          <a href={callToAction.href}>{callToAction.text}</a>
         </div>
       </div>
     </secrtion>
@@ -30,7 +33,8 @@ const MainScreen = (props) => {
 MainScreen.propTypes = {
   imgSrc: PropTypes.string.isRequired,
   header: PropTypes.string.isRequired,
-  quote: PropTypes.object.isRequired
+  quote: PropTypes.object.isRequired,
+  callToAction: PropTypes.object.isRequired
 }
 
 export default MainScreen
