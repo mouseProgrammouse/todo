@@ -1,12 +1,12 @@
 .card {
   min-width: 145px;
   width: 16%;
-  min-height: 236px;
+  min-height: 250px;
   background: #FFFFFF;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   margin-bottom: 35px;
-  padding: 35px 18px 15px;
+  padding: 20px 18px 15px;
   position: relative;
 }
 

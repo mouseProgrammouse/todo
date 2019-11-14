@@ -36,7 +36,7 @@ class App extends Component {
   //update task by id
   updateTaskById = (id, newTitle, newDescription) => {
     //find and update task
-    fetch(backendServer.host+':'+backendServer.port+'/api/v1/tasks?'+id+'&description="'+newDescription+'"&project="'+newTitle+'"', {method:'PUT'})
+    fetch(backendServer.host+':'+backendServer.port+'/api/v1/tasks/'+id+'?description="'+newDescription+'"&project="'+newTitle+'"', {method:'PUT'})
     .then(res=>{
       //set new state
       if(res.ok) this.getTaskList();
@@ -46,7 +46,7 @@ class App extends Component {
 
   //delete task by id
   deleteTaskById = (id) => {
-    fetch(backendServer.host+':'+backendServer.port+'/api/v1/tasks'+id, {method:'DELETE'})
+    fetch(backendServer.host+':'+backendServer.port+'/api/v1/tasks/'+id, {method:'DELETE'})
     .then(res=>{
       if(res.ok) this.getTaskList();
     })

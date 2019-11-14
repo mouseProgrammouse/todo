@@ -26,8 +26,15 @@ class TaskCard extends Component {
 
   updateTaskById (e, id) {
     this.updateModeOff(e);
-    //update task
-    this.props.updateTask(id, e.target.title.value, e.target.description.value);
+    //if id === new add new task
+    //otherwise update existed task
+    if (id==='new') {
+      this.props.addTask(e.target.title.value, e.target.description.value);
+      this.props.newTaskModeOff(e);
+    }
+    else {
+      this.props.updateTask(id, e.target.title.value, e.target.description.value);
+    }
   }
 
 
@@ -36,10 +43,11 @@ class TaskCard extends Component {
 
     return (
       <div className="card">
-      {(this.state.updateMode === true)?
+      {(this.state.updateMode === true || id === 'new')?
         <form className="update" onSubmit={e => this.updateTaskById(e, id)}>
-          <input type="text" name="title" defaultValue={title}/>
-          <input type="text" name="description" defaultValue={description}/>
+          <input type="text" name="title" defaultValue={title} minLength="1" maxLength="36"/>
+          <textarea rows="8" cols="25" name="description" minLength="1" maxLength="124" defaultValue={description}>
+          </textarea>
           <button type="submit">DONE</button>
         </form>:
         <div>
@@ -63,7 +71,9 @@ TaskCard.propTypes = {
   description: PropTypes.string.isRequired,
   id: PropTypes.string,
   deleteTask: PropTypes.func.isRequired,
-  updateTask: PropTypes.func.isRequired
+  updateTask: PropTypes.func.isRequired,
+  addTask: PropTypes.func.isRequired,
+  newTaskModeOff:  PropTypes.func
 }
 
 export default TaskCard;
