@@ -14,7 +14,7 @@ const MainScreen = (props) => {
         <span className="logo">ToDo</span>
         <div>
           <a href="https://github.com/mouseProgrammouse/todo"><FontAwesomeIcon icon={["fab", "git"]}/></a>
-          <a href to="#info"><FontAwesomeIcon icon={faInfoCircle}/></a>
+          <a href="#info"><FontAwesomeIcon icon={faInfoCircle}/></a>
         </div>
       </nav>
       <div className="main-screen">
