@@ -5,3 +5,21 @@
   align-items: baseline;
   max-width: 83%;
 }
+
+.list .add-new-task {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.list .add-new-task button {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  background: #3E3C42;
+  color: #fff;
+  border-radius: 60px;
+  padding: 8px 88px;
+}

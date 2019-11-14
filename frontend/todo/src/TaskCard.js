@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faTrash, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faTrash, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types'
 import './TaskCard.css'
 
@@ -37,6 +37,13 @@ class TaskCard extends Component {
     }
   }
 
+  cancel (e, id) {
+    this.updateModeOff(e);
+    if (id==='new') {
+      this.props.newTaskModeOff(e);
+    }
+  }
+
 
   render () {
     const { title, description, id, deleteTask } = this.props;
@@ -49,6 +56,7 @@ class TaskCard extends Component {
           <textarea rows="8" cols="25" name="description" minLength="1" maxLength="124" defaultValue={description}>
           </textarea>
           <button type="submit">DONE</button>
+          <button type="cancel" onClick={e => this.cancel(e, id)}><FontAwesomeIcon icon={faTimes}/></button>
         </form>:
         <div>
           <h3>{title}</h3>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import TasksList from './TasksList'
+import MainScreen from './MainScreen'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowCircleUp, faArrowCircleDown } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
@@ -78,6 +79,7 @@ class App extends Component {
   render () {
     return (
       <div className="App">
+        <MainScreen />
         <section className="tasks">
         <div className="top">
           <h2>Your current tasks</h2>
