@@ -9,7 +9,7 @@ const MainScreen = (props) => {
   const { imgSrc, header, quote, callToAction} = props;
 
   return (
-    <secrtion className="main">
+    <section className="main">
       <nav>
         <span className="logo">ToDo</span>
         <div>
@@ -26,7 +26,7 @@ const MainScreen = (props) => {
           <a href={callToAction.href}>{callToAction.text}</a>
         </div>
       </div>
-    </secrtion>
+    </section>
   );
 }
 

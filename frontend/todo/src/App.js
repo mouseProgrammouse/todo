@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import TasksList from './TasksList'
 import MainScreen from './MainScreen'
+import Info from './Info'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowCircleUp, faArrowCircleDown } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -104,19 +105,20 @@ class App extends Component {
           quote={data.mainPage.quote}
           callToAction={data.mainPage.callToAction}/>
         <section id="tasks" className="tasks">
-        <div className="top">
-          <h2>Your current tasks</h2>
-          <div className="sort">
-            <button><FontAwesomeIcon icon={faArrowCircleDown}/></button>
-            <button><FontAwesomeIcon icon={faArrowCircleUp}/></button>
+          <div className="top">
+            <h2>Your current tasks</h2>
+            <div className="sort">
+              <button><FontAwesomeIcon icon={faArrowCircleDown}/></button>
+              <button><FontAwesomeIcon icon={faArrowCircleUp}/></button>
+            </div>
           </div>
-        </div>
-        <TasksList
-        updateTask={this.updateTaskById}
-        addTask={this.addNewTask}
-        deleteTask={this.deleteTaskById}
-        tasksList={this.state.tasksList}/>
+          <TasksList
+          updateTask={this.updateTaskById}
+          addTask={this.addNewTask}
+          deleteTask={this.deleteTaskById}
+          tasksList={this.state.tasksList}/>
         </section>
+        <Info/>
       </div>
     );
   }
