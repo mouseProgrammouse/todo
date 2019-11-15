@@ -19,6 +19,8 @@
   **Mokup:**
   For the design prototype I used Figma. See full [project](hhttps://www.figma.com/file/zTrQ1N0sM0aPlfsYFAW2mG/TODOlist?node-id=10%3A803) at <img src="https://raw.githubusercontent.com/mouseProgrammouse/readme/master/icons/figma-logo.png" width="28"/>
   
+  **Backend** handcrafted by [skyfox](https://github.com/skyfox/todo)
+  
   <img src="https://github.com/mouseProgrammouse/readme/blob/master/icons/react.png" width="28"/> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
   
   **Testing:** 
