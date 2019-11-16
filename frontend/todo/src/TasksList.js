@@ -26,13 +26,15 @@ render () {
 
   const { updateTask, addTask, deleteTask, tasksList } = this.props;
 
-  return (<div className="list">
-    {tasksList.map((task, index) => (
-      <TaskCard addTask={addTask} updateTask={updateTask} deleteTask={deleteTask} key={index} title={task.project} description={task.description} id={task.id} />
-    ))}
-    {(this.state.newTaskMode)?
-      <TaskCard addTask={addTask} updateTask={updateTask} deleteTask={deleteTask} title={''} description={''} id={'new'} newTaskModeOff={this.newTaskModeOff.bind(this)}/>:''
-    }
+  return (<div className="your-tasks">
+    <div className="list">
+      {tasksList.map((task, index) => (
+        <TaskCard addTask={addTask} updateTask={updateTask} deleteTask={deleteTask} key={index} title={task.project} description={task.description} id={task.id} />
+      ))}
+      {(this.state.newTaskMode)?
+        <TaskCard addTask={addTask} updateTask={updateTask} deleteTask={deleteTask} title={''} description={''} id={'new'} newTaskModeOff={this.newTaskModeOff.bind(this)}/>:''
+      }
+    </div>
     <div className="add-new-task">
       <button onClick={e=>this.newTaskModeOn(e)}>Create task</button>
     </div>

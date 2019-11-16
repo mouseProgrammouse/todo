@@ -1,18 +1,20 @@
-.list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: baseline;
+.your-tasks {
   max-width: 83%;
 }
 
-.list .add-new-task {
+.list {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto auto auto auto;
+}
+
+.your-tasks .add-new-task {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.list .add-new-task button {
+.your-tasks .add-new-task button {
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
